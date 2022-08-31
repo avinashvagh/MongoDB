@@ -10,4 +10,17 @@ mongoose.connect('mongodb://localhost:27017/movieApp', {useNewUrlParser:true, us
     console.log(err)
 })
 
+// our first mongoose  model 
+const movieSchema = new mongoose.Schema({
+    title:String,
+    year:Number,
+    score:Number,
+    rating:String
+})
+
+const Movie= mongoose.model("movie", movieSchema)
+const amadeus= new Movie({title:"Amadeus", year:1986, score:9.2, rating:"R"})
+
+//  our first moongoose model end 
+
 
